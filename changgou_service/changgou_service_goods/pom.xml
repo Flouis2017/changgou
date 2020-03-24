@@ -3,18 +3,30 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-		<artifactId>changgou</artifactId>
+		<artifactId>changgou_service</artifactId>
 		<groupId>com.flouis</groupId>
 		<version>1.0</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>changgou_eureka</artifactId>
+	<artifactId>changgou_service_goods</artifactId>
 
 	<dependencies>
 		<dependency>
+			<groupId>com.flouis</groupId>
+			<artifactId>changgou_common_db</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.flouis</groupId>
+			<artifactId>changgou_service_goods_cfg</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 	</dependencies>
 

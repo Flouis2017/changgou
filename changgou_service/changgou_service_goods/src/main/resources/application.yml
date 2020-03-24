@@ -1,0 +1,57 @@
+server:
+    port: 9011
+
+spring:
+    application:
+        name: goods
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://122.51.145.185:3437/changgou_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowMultiQueries=true
+        username: root
+        password: 951210
+        platform: mysql
+        type: com.alibaba.druid.pool.DruidDataSource
+        druid:
+            max-active: 12
+            initial-size: 3
+            max-wait: 60000
+            min-idle: 10
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://127.0.0.1:6868/eureka
+    instance:
+        prefer-ip-address: true
+
+feign:
+    hystrix:
+        enabled: true
+
+hystrix:
+    command:
+        default:
+            execution:
+                timeout:
+                    enabled: true
+                isolation:
+                    strategy: SEMAPHORE
+mybatis:
+    type-aliases-package: com.flouis.changgou.goods.pojo
+    mapper-locations: classpath:mybatis-mappers/*.xml
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+    helper-dialect: mysql
+    reasonable: true
+    support-methods-arguments: true
+    params: count=countSql
+
+logging:
+    level:
+        com:
+            flouis:
+                changgou:
+                    goods:
+                        dao: debug

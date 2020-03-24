@@ -9,13 +9,25 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>changgou_eureka</artifactId>
+	<artifactId>changgou_service_cfg</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>changgou_service_goods_cfg</module>
+	</modules>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<scope>provided</scope>
 		</dependency>
+
+		<!--<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0</version>
+			<scope>compile</scope>
+		</dependency>-->
 	</dependencies>
 
 </project>
