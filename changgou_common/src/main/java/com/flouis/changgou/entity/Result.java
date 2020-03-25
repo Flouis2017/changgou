@@ -25,6 +25,10 @@ public class Result {
 		return new Result(true, ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getDescription(), data);
 	}
 
+	public static Result success(String message){
+		return new Result(true, ResultCode.SUCCESS.getCode(), message, null);
+	}
+
 	public static Result success(String message, Object data){
 		return new Result(true, ResultCode.SUCCESS.getCode(), message, data);
 	}
