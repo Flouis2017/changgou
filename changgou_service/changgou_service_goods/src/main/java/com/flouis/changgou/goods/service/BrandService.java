@@ -12,11 +12,20 @@ public class BrandService {
 	@Resource
 	private BrandMapper brandMapper;
 
-	/**
-	 * @description 查询所有品牌
-	 */
-	public List<Brand> findAll(){
+	public List<Brand> findAll() {
 		return this.brandMapper.findAll();
+	}
+
+	public void add(Brand brand) {
+		this.brandMapper.insertSelective(brand);
+	}
+
+	public void update(Brand brand) {
+		this.brandMapper.updateByPrimaryKeySelective(brand);
+	}
+
+	public void delete(Long id) {
+		this.brandMapper.deleteByPrimaryKey(id);
 	}
 
 }

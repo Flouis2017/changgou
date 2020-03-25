@@ -3,7 +3,7 @@ package com.flouis.changgou.entity;
 public enum ResultCode {
 
 	SUCCESS(20000, "请求成功"),
-	FAIL(40000, "请求失败"),
+	FAIL(40000, "服务器异常，请求失败"),
 	LOGIN_ERROR(40001, "用户名或密码出错"),
 	ACCESS_ERROR(40002, "权限不足"),
 	REMOTE_ERROR(40003, "远程调用失败"),
