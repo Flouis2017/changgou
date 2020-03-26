@@ -1,6 +1,6 @@
 package com.flouis.changgou.goods.handler;
 
-import com.flouis.changgou.entity.Result;
+import com.flouis.changgou.common.entity.Result;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

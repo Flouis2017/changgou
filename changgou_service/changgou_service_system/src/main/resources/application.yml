@@ -1,12 +1,12 @@
 server:
-    port: 9011
+    port: 9001
 
 spring:
     application:
-        name: goods
+        name: system
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://122.51.145.185:3437/changgou_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowMultiQueries=true
+        url: jdbc:mysql://122.51.145.185:3437/changgou_system?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowMultiQueries=true
         username: root
         password: 951210
         platform: mysql
@@ -37,7 +37,7 @@ hystrix:
                 isolation:
                     strategy: SEMAPHORE
 mybatis:
-    type-aliases-package: com.flouis.changgou.goods.pojo
+    type-aliases-package: com.flouis.changgou.system.pojo
     mapper-locations: classpath:mybatis-mappers/*.xml
     configuration:
         log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -53,5 +53,5 @@ logging:
         com:
             flouis:
                 changgou:
-                    goods:
+                    system:
                         dao: debug

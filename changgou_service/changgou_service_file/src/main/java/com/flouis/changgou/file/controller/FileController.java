@@ -1,6 +1,6 @@
 package com.flouis.changgou.file.controller;
 
-import com.flouis.changgou.entity.Result;
+import com.flouis.changgou.common.entity.Result;
 import com.flouis.changgou.file.pojo.FastDFSFile;
 import com.flouis.changgou.file.util.FastDFSClient;
 import org.apache.commons.lang3.StringUtils;

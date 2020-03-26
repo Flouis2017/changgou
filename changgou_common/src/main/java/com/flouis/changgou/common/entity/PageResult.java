@@ -1,4 +1,4 @@
-package com.flouis.changgou.entity;
+package com.flouis.changgou.common.entity;
 
 
 import lombok.*;

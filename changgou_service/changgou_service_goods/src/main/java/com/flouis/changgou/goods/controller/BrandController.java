@@ -1,6 +1,6 @@
 package com.flouis.changgou.goods.controller;
 
-import com.flouis.changgou.entity.Result;
+import com.flouis.changgou.common.entity.Result;
 import com.flouis.changgou.goods.pojo.Brand;
 import com.flouis.changgou.goods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;

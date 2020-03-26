@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.flouis</groupId>
-			<artifactId>changgou_common</artifactId>
+			<artifactId>changgou_common_db</artifactId>
 			<version>1.0</version>
 		</dependency>
 

@@ -1,5 +1,6 @@
 package com.flouis.changgou.file.util;
 
+import com.flouis.changgou.common.util.ResourceUtil;
 import com.flouis.changgou.file.pojo.FastDFSFile;
 import org.csource.common.MyException;
 import org.csource.common.NameValuePair;
@@ -68,7 +69,7 @@ public class FastDFSClient {
         byte[] fileByte = storageClient.download_file(groupName, remoteFileName);
         InputStream is = new ByteArrayInputStream(fileByte);
         // 没有文件夹创建文件夹：
-        String localSaveDirPath = "/data/fast_data/";
+        String localSaveDirPath = ResourceUtil.getProperty("localSaveDirPath");
         File dir = new File(localSaveDirPath);
         if (!dir.exists()){
             dir.mkdirs();

@@ -17,17 +17,6 @@
 			<artifactId>changgou_common_db</artifactId>
 			<version>1.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.flouis</groupId>
-			<artifactId>changgou_service_goods_cfg</artifactId>
-			<version>1.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
 	</dependencies>
 
 </project>

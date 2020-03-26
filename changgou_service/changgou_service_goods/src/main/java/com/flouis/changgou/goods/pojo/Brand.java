@@ -2,6 +2,7 @@ package com.flouis.changgou.goods.pojo;
 
 import lombok.Getter;
 import lombok.Setter;
+
 import java.io.Serializable;
 
 @Getter
