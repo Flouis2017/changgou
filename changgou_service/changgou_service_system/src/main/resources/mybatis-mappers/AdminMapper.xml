@@ -24,7 +24,8 @@
 		where id = #{id,jdbcType=BIGINT}
 	</delete>
 
-	<insert id="insertSelective" parameterType="com.flouis.changgou.system.pojo.Admin">
+	<insert id="insertSelective" parameterType="com.flouis.changgou.system.pojo.Admin"
+		useGeneratedKeys="true" keyColumn="id" keyProperty="id">
 		insert into tb_admin
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="loginName != null">
@@ -48,6 +49,9 @@
 				#{state,jdbcType=INTEGER},
 			</if>
 		</trim>
+		<selectKey keyProperty="id" resultType="long" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
 	</insert>
 
 	<update id="updateByPrimaryKeySelective" parameterType="com.flouis.changgou.system.pojo.Admin">
@@ -68,6 +72,10 @@
 
 	<select id="findAll" resultMap="BaseResultMap">
 		select <include refid="Base_Column_List"/> from tb_admin
+	</select>
+
+	<select id="findOneByLoginName" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List"/> from tb_admin where login_name = #{loginName} limit 1
 	</select>
 
 </mapper>

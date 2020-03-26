@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 import java.net.InetSocketAddress;
 
-@Component
+//@Component
 public class IpFilter implements GlobalFilter, Ordered {
 
 	@Override

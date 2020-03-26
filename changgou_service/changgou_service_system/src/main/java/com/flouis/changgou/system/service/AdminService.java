@@ -18,9 +18,19 @@ public class AdminService {
 		return this.adminMapper.findAll();
 	}
 
-	public void add(Admin admin) {
+	public void add(Admin admin) throws Exception {
+		// 用户名唯一校验：
+		Admin record = this.adminMapper.findOneByLoginName(admin.getLoginName());
+		if (record != null){
+			throw new Exception("用户名不可重复！");
+		}
 		String password = BCrypt.hashpw(admin.getPassword(), BCrypt.gensalt());
 		admin.setPassword(password);
 		this.adminMapper.insertSelective(admin);
 	}
+
+	public Admin findOneByLoginName(String loginName){
+		return this.adminMapper.findOneByLoginName(loginName);
+	}
+
 }
