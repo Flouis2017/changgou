@@ -28,10 +28,10 @@ spring:
                             - DELETE
             routes:
 #                - id: goods/aa # <网关微服务地址>/<id>/<Path> =(映射)=> <uri>/<Path>
-                - id: goods
+                - id: cg_goods
                   uri: http://127.0.0.1:9011 # 被路由的微服务地址
                   predicates:
-                    - Path=/goods/** # 被路由的请求路径，/** 表示所有请求被路由
+                    - Path=/cg_goods/** # 被路由的请求路径，/** 表示所有请求被路由
                   filters:
 #                    - StripPrefix=2 # 等于上面id用/分割后的个数
                     - StripPrefix=1
@@ -41,9 +41,9 @@ spring:
 #                          key-resolver: "#{@ipKeyResolver}"
 #                          redis-rate-limiter.replenishRate: 1 # 令牌桶每秒填充数
 #                          redis-rate-limiter.burstCapacity: 1 # 令牌桶总容量
-                - id: system
+                - id: cg_system
                   uri: http://127.0.0.1:9001
                   predicates:
-                    - Path=/system/**
+                    - Path=/cg_system/**
                   filters:
                     - StripPrefix=1

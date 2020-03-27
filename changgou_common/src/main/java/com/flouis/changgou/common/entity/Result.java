@@ -3,7 +3,7 @@ package com.flouis.changgou.common.entity;
 import lombok.*;
 
 /**
- * @description 写结果实体类
+ * @description 结果实体类
  */
 @Getter
 @Setter

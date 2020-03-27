@@ -55,3 +55,6 @@ logging:
                 changgou:
                     goods:
                         dao: debug
+
+workerId: 0
+datacenterId: 0

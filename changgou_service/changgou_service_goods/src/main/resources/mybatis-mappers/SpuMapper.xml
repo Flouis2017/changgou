@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.flouis.changgou.goods.dao.SpuMapper">
+
+	<resultMap id="BaseResultMap" type="com.flouis.changgou.goods.pojo.Spu">
+		<id column="id" jdbcType="VARCHAR" property="id"/>
+		<result column="sn" jdbcType="VARCHAR" property="sn"/>
+		<result column="name" jdbcType="VARCHAR" property="name"/>
+		<result column="caption" jdbcType="VARCHAR" property="caption"/>
+		<result column="brand_id" jdbcType="BIGINT" property="brandId"/>
+		<result column="category1_id" jdbcType="BIGINT" property="category1Id"/>
+		<result column="category2_id" jdbcType="BIGINT" property="category2Id"/>
+		<result column="category3_id" jdbcType="BIGINT" property="category3Id"/>
+		<result column="template_id" jdbcType="BIGINT" property="templateId"/>
+		<result column="freight_id" jdbcType="BIGINT" property="freightId"/>
+		<result column="image" jdbcType="VARCHAR" property="image"/>
+		<result column="sale_service" jdbcType="VARCHAR" property="saleService"/>
+		<result column="spec_items" jdbcType="VARCHAR" property="specItems"/>
+		<result column="param_items" jdbcType="VARCHAR" property="paramItems"/>
+		<result column="comment_num" jdbcType="INTEGER" property="commentNum"/>
+		<result column="is_enable_spec" jdbcType="INTEGER" property="isEnableSpec"/>
+		<result column="state" jdbcType="INTEGER" property="state"/>
+		<result column="images" jdbcType="LONGVARCHAR" property="images"/>
+		<result column="introduction" jdbcType="LONGVARCHAR" property="introduction"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, sn, name, caption, brand_id, category1_id, category2_id, category3_id, template_id,
+		freight_id, image, sale_service, spec_items, param_items, comment_num, is_enable_spec,
+		state, images, introduction
+	</sql>
+
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List"/>
+		from tb_spu
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from tb_spu
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="insertSelective" parameterType="com.flouis.changgou.goods.pojo.Spu">
+		insert into tb_spu
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="sn != null">
+				sn,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="caption != null">
+				caption,
+			</if>
+			<if test="brandId != null">
+				brand_id,
+			</if>
+			<if test="category1Id != null">
+				category1_id,
+			</if>
+			<if test="category2Id != null">
+				category2_id,
+			</if>
+			<if test="category3Id != null">
+				category3_id,
+			</if>
+			<if test="templateId != null">
+				template_id,
+			</if>
+			<if test="freightId != null">
+				freight_id,
+			</if>
+			<if test="image != null">
+				image,
+			</if>
+			<if test="saleService != null">
+				sale_service,
+			</if>
+			<if test="specItems != null">
+				spec_items,
+			</if>
+			<if test="paramItems != null">
+				param_items,
+			</if>
+			<if test="commentNum != null">
+				comment_num,
+			</if>
+			<if test="isEnableSpec != null">
+				is_enable_spec,
+			</if>
+			<if test="state != null">
+				state,
+			</if>
+			<if test="images != null">
+				images,
+			</if>
+			<if test="introduction != null">
+				introduction,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="sn != null">
+				#{sn,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="caption != null">
+				#{caption,jdbcType=VARCHAR},
+			</if>
+			<if test="brandId != null">
+				#{brandId,jdbcType=BIGINT},
+			</if>
+			<if test="category1Id != null">
+				#{category1Id,jdbcType=BIGINT},
+			</if>
+			<if test="category2Id != null">
+				#{category2Id,jdbcType=BIGINT},
+			</if>
+			<if test="category3Id != null">
+				#{category3Id,jdbcType=BIGINT},
+			</if>
+			<if test="templateId != null">
+				#{templateId,jdbcType=BIGINT},
+			</if>
+			<if test="freightId != null">
+				#{freightId,jdbcType=BIGINT},
+			</if>
+			<if test="image != null">
+				#{image,jdbcType=VARCHAR},
+			</if>
+			<if test="saleService != null">
+				#{saleService,jdbcType=VARCHAR},
+			</if>
+			<if test="specItems != null">
+				#{specItems,jdbcType=VARCHAR},
+			</if>
+			<if test="paramItems != null">
+				#{paramItems,jdbcType=VARCHAR},
+			</if>
+			<if test="commentNum != null">
+				#{commentNum,jdbcType=INTEGER},
+			</if>
+			<if test="isEnableSpec != null">
+				#{isEnableSpec,jdbcType=INTEGER},
+			</if>
+			<if test="state != null">
+				#{state,jdbcType=INTEGER},
+			</if>
+			<if test="images != null">
+				#{images,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="introduction != null">
+				#{introduction,jdbcType=LONGVARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="updateByPrimaryKeySelective" parameterType="com.flouis.changgou.goods.pojo.Spu">
+		update tb_spu
+		<set>
+			<if test="sn != null">
+				sn = #{sn,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="caption != null">
+				caption = #{caption,jdbcType=VARCHAR},
+			</if>
+			<if test="brandId != null">
+				brand_id = #{brandId,jdbcType=BIGINT},
+			</if>
+			<if test="category1Id != null">
+				category1_id = #{category1Id,jdbcType=BIGINT},
+			</if>
+			<if test="category2Id != null">
+				category2_id = #{category2Id,jdbcType=BIGINT},
+			</if>
+			<if test="category3Id != null">
+				category3_id = #{category3Id,jdbcType=BIGINT},
+			</if>
+			<if test="templateId != null">
+				template_id = #{templateId,jdbcType=BIGINT},
+			</if>
+			<if test="freightId != null">
+				freight_id = #{freightId,jdbcType=BIGINT},
+			</if>
+			<if test="image != null">
+				image = #{image,jdbcType=VARCHAR},
+			</if>
+			<if test="saleService != null">
+				sale_service = #{saleService,jdbcType=VARCHAR},
+			</if>
+			<if test="specItems != null">
+				spec_items = #{specItems,jdbcType=VARCHAR},
+			</if>
+			<if test="paramItems != null">
+				param_items = #{paramItems,jdbcType=VARCHAR},
+			</if>
+			<if test="commentNum != null">
+				comment_num = #{commentNum,jdbcType=INTEGER},
+			</if>
+			<if test="isEnableSpec != null">
+				is_enable_spec = #{isEnableSpec,jdbcType=INTEGER},
+			</if>
+			<if test="state != null">
+				state = #{state,jdbcType=INTEGER},
+			</if>
+			<if test="images != null">
+				images = #{images,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="introduction != null">
+				introduction = #{introduction,jdbcType=LONGVARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+
+</mapper>

@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.List;
 
 /**
- * @description 读结果实体类
+ * @description 分页查询结果实体类
  */
 @Getter
 @Setter

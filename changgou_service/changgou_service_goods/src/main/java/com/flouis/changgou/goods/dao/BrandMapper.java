@@ -9,6 +9,8 @@ public interface BrandMapper {
 
     int deleteByPrimaryKey(Long id);
 
+    Brand selectByPrimaryKey(Long id);
+
     int insertSelective(Brand record);
 
     int updateByPrimaryKeySelective(Brand record);

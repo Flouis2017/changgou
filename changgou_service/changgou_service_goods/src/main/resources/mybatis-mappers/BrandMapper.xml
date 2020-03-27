@@ -18,6 +18,10 @@
 		where id = #{id,jdbcType=BIGINT}
 	</delete>
 
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List"/> from tb_brand where id = #{id}
+	</select>
+
 	<insert id="insertSelective" parameterType="com.flouis.changgou.goods.pojo.Brand"
 			useGeneratedKeys="true" keyColumn="id" keyProperty="id">
 		insert into tb_brand
